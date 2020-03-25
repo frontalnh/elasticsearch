@@ -92,6 +92,17 @@ logstash-plugin list --verbose
 ```
 ### JDBC Input Plugin
 
+# Kibana
 
+## How to configure
+
+/etc/kibana/kibana.yml
+
+```
+server.name: kibana
+server.host: '0'
+elasticsearch.url: http://elasticsearch:9200
+xpack.monitoring.ui.container.elasticsearch.enabled: true
+```
 
 
