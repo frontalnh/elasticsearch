@@ -4,9 +4,16 @@
 
 ## Configure and run Elasticsearch
 
+/etc/elasticsearch/elasticsearch.yml
+
+```
+network.host: 0.0.0.0
+discovery.seed_hosts:
+  - Your host ip
+```
+
 Start `sudo systemctl start elasticsearch.service`
 Stop `sudo systemctl stop elasticsearch.service`
-
 
 ## Interactwith elastic search
 
@@ -14,8 +21,8 @@ Insert data
 
 ```
 curl -X POST -H "Content-Type:application" \
-	localhost:9200/company/employee/_create \
-	-d '{"name":"namhoon"}'
+ localhost:9200/company/employee/_create \
+ -d '{"name":"namhoon"}'
 ```
 
 Retrieve data
@@ -29,46 +36,6 @@ curl localhost:9200/company/employee/_search | jq
 Logstash is an open source data collection engine with real-time pipelining capabilities.
 
 ## Installation
-
-## Configuration
-
-/etc/logstash/logstash.yml
-
-```
-pipeline:
-  batch:
-    size: 125
-    delay: 50
-
-node:
-  name: "node_${LS_NODE_NAME}"
-path:
-  queue: "/tmp/${QUEUE_DIR:queue}"
-
-```
-
-/etc/logstash/conf.d/stdin.conf
-
-```
-input { 
-  stdin {
-
-  } 
-}
-```
-
-/etc/logstash/conf.d/jdbc.conf
-
-```
-input {
-  jdbc {
-    jdbc_driver
-  }
-}
-```
-
-
-## Interact with logstash
 
 Start logstash with standard input
 
@@ -90,19 +57,5 @@ List
 logstash-plugin list
 logstash-plugin list --verbose
 ```
+
 ### JDBC Input Plugin
-
-# Kibana
-
-## How to configure
-
-/etc/kibana/kibana.yml
-
-```
-server.name: kibana
-server.host: '0'
-elasticsearch.url: http://elasticsearch:9200
-xpack.monitoring.ui.container.elasticsearch.enabled: true
-```
-
-

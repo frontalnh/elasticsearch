@@ -1,0 +1,9 @@
+pipeline:
+  batch:
+    size: 125
+    delay: 50
+
+node:
+  name: "node_${LS_NODE_NAME}"
+path:
+  queue: "/tmp/${QUEUE_DIR:queue}"
