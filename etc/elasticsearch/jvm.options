@@ -1,0 +1,4 @@
+## This fild overrides /etc/ealsticsearch/jvm.options which is default configuration
+
+## Max memory heap size
+-Xmx32g

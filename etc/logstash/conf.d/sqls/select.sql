@@ -1,0 +1,1 @@
+SELECT * FROM user WHERE id > :sql_last_value
