@@ -1,16 +1,6 @@
 # ElasticSearch
 
-## Installation
-
-## Configure and run Elasticsearch
-
-/etc/elasticsearch/elasticsearch.yml
-
-```
-network.host: 0.0.0.0
-discovery.seed_hosts:
-  - Your host ip
-```
+## Start and stop
 
 Start `sudo systemctl start elasticsearch.service`
 Stop `sudo systemctl stop elasticsearch.service`
@@ -101,10 +91,10 @@ logstash-plugin list --verbose
 
 ### JDBC Input Plugin
 
-# X-PACK
+
+# Kibana
 
 ## Installation
 
 ```
-$ES_HOME/bin/elasticsearch-plugin install x-pack
 ```
