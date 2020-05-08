@@ -74,7 +74,13 @@ sudo systemctl start logstash.service
 sudo systemctl stop logstash.service
 ```
 
-## Reset sql_last_value
+## last run metadata
+
+로그스태시가 마지막 실행 정보를 저장하기 위해서 아래처럼 logstash 에게 권한을 준다.
+
+```
+sudo chown logstash:logstash /etc/logstash/conf.d/lastrun
+```
 
 ```
 
