@@ -63,7 +63,7 @@ curl -XPUT localhost:9200/.kibana/_settings? \
 
 ```sh
 curl -X POST -H "Content-Type:application/json" \
- localhost:9200/user_index/user/_create \
+ localhost:9200/user_index/user/<DOCUMENT_ID> \
  -d '{"name":"namhoon"}' 
 ```
 
