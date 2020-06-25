@@ -47,7 +47,7 @@ curl -XPUT localhost:9200/_settings? \
   -H 'Content-Type: application/json'
 
 
-curl -XPUT localhost:9200/<YOUR_INDEX_NAME>/_settings? \
+curl -XPUT localhost:9200/user_balance_index/_settings? \
   -d '{"index": {"blocks": {"read_only_allow_delete": "true"}}}' \
   -H 'Content-Type: application/json'
 
